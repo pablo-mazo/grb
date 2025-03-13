@@ -1,0 +1,111 @@
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>GoldenRatioBrothers</h3>
+            </div>
+            <div class="footer-column">
+                <h3>Servicios</h3>
+                <!-- <ul class="footer-links">
+                    <li><a href="#">Gestión de cadena de suministros</a></li>
+                    <li><a href="#">Logística de eventos</a></li>
+                    <li>
+                        <a href="#">Transporte y distribución</a>
+                    </li>
+                    <li><a href="#">Almacenamiento</a></li>
+                    <li><a href="#">Alquiler de equipos</a></li>
+                    <li><a href="#">Consultoría</a></li>
+                </ul> -->
+            </div>
+            <div class="footer-column">
+                <h3>Industrias</h3>
+            </div>
+            <div class="footer-column">
+                <h3>Recursos</h3>
+            </div>
+            <div class="footer-column">
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">IN</a>
+                    <a href="#">TW</a>
+                    <a href="#">IG</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 GoldenRatioBrothers. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+<style>
+    /* Footer */
+    footer {
+        background-color: var(--dark);
+        color: var(--light);
+        padding: 4rem 0 2rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1rem;
+        justify-items: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+    }
+
+    .footer-column h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: var(--white);
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+        color: #aaa;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--secondary);
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: var(--white);
+        transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+        background-color: var(--secondary);
+        color: var(--dark);
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        color: #aaa;
+    }
+</style>

@@ -1,0 +1,156 @@
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Contáctanos</h2>
+            <p>
+                Contáctanos para solucionar tu logística y cadena de suministros
+            </p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Información de contacto</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <p>Viva Envigado, Distrito de la Empresa</p>
+                        <p>Local 123, Primer Piso</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <p>+573000000000</p>
+                        <p>+573000000001</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <p>hello@goldenratiobrothers.com</p>
+                        <p>support@goldenratiobrothers.com</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">IN</a>
+                    <a href="#">TW</a>
+                    <a href="#">IG</a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Envíanos un mensaje</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" placeholder="Your name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Your email"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" placeholder="Your phone" />
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Servicio Requerido</label>
+                        <select id="service">
+                            <option value="">Selecciona un servicio</option>
+                            <option value="supply"
+                                >Gestión de cadena de suministros</option
+                            >
+                            <option value="events">Logística de eventos</option>
+                            <option value="transport"
+                                >Transporte y distribución</option
+                            >
+                            <option value="warehouse"
+                                >Almacenamiento</option
+                            >
+                            <option value="equipment">Alquiler de equipos</option>
+                            <option value="consulting"
+                                >Consultoría</option
+                            >
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tu Mensaje</label>
+                        <textarea
+                            id="message"
+                            placeholder="Cuéntanos sobre tus necesidades de logística"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    /* Contact Section */
+    .contact {
+        padding: 5rem 0;
+        background-color: var(--primary);
+        color: var(--white);
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 4rem;
+    }
+
+    .contact-info h2 {
+        margin-bottom: 2rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+        margin-right: 1rem;
+        font-size: 1.5rem;
+        color: var(--secondary);
+    }
+
+    .contact-form {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+        font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+</style>

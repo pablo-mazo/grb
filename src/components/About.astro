@@ -1,0 +1,77 @@
+---
+import buildLogo from "../assets/build1.jpg";
+---
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Entregamos Excelencia en cada paso</h2>
+                <p>
+                    GoldenRatioBrothers es un <span class="about-highlight"
+                        >prestigioso proveedor de suministros y logística</span
+                    > con más de 15 años de experiencia entregando soluciones personalizadas
+                    en múltiples industrias.
+                </p>
+                <p>
+                    Nuestra misión es optimizar tu cadena de suministros con
+                    servicios eficientes, costos eficientes y confiables que te
+                    ayudan a crecer en el mercado competitivo de hoy.
+                </p>
+                <p>
+                    Con un equipo de profesionales experimentados y una vasta
+                    red de recursos, manejamos todo desde la adquisición y la
+                    transportación hasta el almacenamiento y la distribución.
+                </p>
+                <a href="#services" class="btn">Explora nuestros servicios</a>
+            </div>
+            <div class="about-image">
+                <img
+                    src={buildLogo.src}
+                    alt="LogiStar Logistics in action"
+                    width={500}
+                    height={300}
+                />
+            </div>
+        </div>
+    </div>
+</section>
+<style lang="scss">
+    /* About Section */
+    .about {
+        padding: 5rem 0;
+        background-color: var(--light);
+    }
+
+    .about-content {
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .about-text {
+        flex: 1;
+    }
+
+    .about-text h2 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .about-highlight {
+        color: var(--secondary);
+        font-weight: 700;
+    }
+
+    .about-image {
+        flex: 1;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+</style>

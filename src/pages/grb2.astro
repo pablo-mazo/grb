@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LogiServe - Soluciones de Suministro y Logística</title>
+        <style>
+            :root {
+                --primary-color: #0d2e4e;
+                --accent-color: #ffc107;
+                --secondary-color: #3498db;
+                --text-color: #333;
+                --light-color: #f8f9fa;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                color: var(--text-color);
+                line-height: 1.6;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            /* Header */
+            header {
+                background-color: var(--primary-color);
+                padding: 15px 0;
+                position: fixed;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+            }
+
+            .logo img {
+                height: 50px;
+                margin-right: 10px;
+            }
+
+            .logo h1 {
+                color: white;
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
+
+            .nav-links {
+                display: flex;
+                list-style: none;
+            }
+
+            .nav-links li {
+                margin-left: 30px;
+            }
+
+            .nav-links a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                transition: color 0.3s;
+            }
+
+            .nav-links a:hover {
+                color: var(--accent-color);
+            }
+
+            .cta-button {
+                background-color: var(--accent-color);
+                color: var(--primary-color);
+                border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+
+            .cta-button:hover {
+                background-color: #e5ac00;
+                transform: translateY(-2px);
+            }
+
+            /* Hero Section */
+            .hero {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 160px 0 80px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    135deg,
+                    rgba(13, 46, 78, 0.8) 0%,
+                    rgba(13, 46, 78, 0.95) 100%
+                );
+                z-index: 1;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+            }
+
+            .hero-text {
+                flex: 1;
+                padding-right: 40px;
+            }
+
+            .hero-text h2 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+                line-height: 1.2;
+            }
+
+            .hero-text h2 span {
+                color: var(--accent-color);
+            }
+
+            .hero-text p {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+                max-width: 600px;
+            }
+
+            .hero-image {
+                flex: 1;
+                text-align: center;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Services Section */
+            .services {
+                padding: 100px 0;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 60px;
+            }
+
+            .section-header h3 {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 20px;
+            }
+
+            .section-header p {
+                font-size: 1.1rem;
+                max-width: 700px;
+                margin: 0 auto;
+                color: #666;
+            }
+
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            .service-card {
+                background-color: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition:
+                    transform 0.3s,
+                    box-shadow 0.3s;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .service-image {
+                height: 200px;
+                overflow: hidden;
+            }
+
+            .service-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s;
+            }
+
+            .service-card:hover .service-image img {
+                transform: scale(1.1);
+            }
+
+            .service-content {
+                padding: 25px;
+            }
+
+            .service-content h4 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+                color: var(--primary-color);
+            }
+
+            .service-content p {
+                color: #666;
+                margin-bottom: 20px;
+            }
+
+            .service-icon {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                background-color: var(--primary-color);
+                border-radius: 50%;
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .service-icon i {
+                color: var(--accent-color);
+                font-size: 24px;
+            }
+
+            /* Features Section */
+            .features {
+                background-color: #f5f7fa;
+                padding: 100px 0;
+            }
+
+            .features-content {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+            }
+
+            .features-image {
+                flex: 1;
+            }
+
+            .features-image img {
+                max-width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .features-text {
+                flex: 1;
+            }
+
+            .features-text h3 {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                margin-bottom: 30px;
+            }
+
+            .feature-item {
+                display: flex;
+                margin-bottom: 25px;
+            }
+
+            .feature-icon {
+                margin-right: 20px;
+                min-width: 40px;
+                height: 40px;
+                background-color: var(--accent-color);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--primary-color);
+                font-weight: bold;
+            }
+
+            .feature-text h4 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: var(--primary-color);
+            }
+
+            /* Clients Section */
+            .clients {
+                padding: 80px 0;
+                text-align: center;
+            }
+
+            .clients-logos {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-top: 50px;
+            }
+
+            .client-logo {
+                margin: 20px;
+                opacity: 0.7;
+                transition: opacity 0.3s;
+            }
+
+            .client-logo:hover {
+                opacity: 1;
+            }
+
+            .client-logo img {
+                max-width: 140px;
+                height: auto;
+            }
+
+            /* Call to Action */
+            .cta {
+                background-color: var(--primary-color);
+                padding: 100px 0;
+                color: white;
+                text-align: center;
+            }
+
+            .cta h3 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .cta p {
+                font-size: 1.2rem;
+                max-width: 700px;
+                margin: 0 auto 40px;
+            }
+
+            /* Contact Form */
+            .contact {
+                padding: 100px 0;
+            }
+
+            .contact-wrapper {
+                display: flex;
+                gap: 50px;
+            }
+
+            .contact-info {
+                flex: 1;
+            }
+
+            .contact-info h3 {
+                font-size: 2rem;
+                color: var(--primary-color);
+                margin-bottom: 30px;
+            }
+
+            .contact-info p {
+                margin-bottom: 30px;
+                font-size: 1.1rem;
+            }
+
+            .contact-detail {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                background-color: var(--primary-color);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 15px;
+                color: var(--accent-color);
+            }
+
+            .contact-form {
+                flex: 1;
+                background-color: white;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: var(--primary-color);
+            }
+
+            .form-control {
+                width: 100%;
+                padding: 12px 15px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 16px;
+                transition: border 0.3s;
+            }
+
+            .form-control:focus {
+                border-color: var(--primary-color);
+                outline: none;
+            }
+
+            textarea.form-control {
+                min-height: 150px;
+                resize: vertical;
+            }
+
+            .submit-btn {
+                background-color: var(--primary-color);
+                color: white;
+                border: none;
+                padding: 14px 30px;
+                border-radius: 4px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s;
+                width: 100%;
+            }
+
+            .submit-btn:hover {
+                background-color: var(--accent-color);
+                color: var(--primary-color);
+            }
+
+            /* Footer */
+            footer {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 60px 0 20px;
+            }
+
+            .footer-content {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 40px;
+                margin-bottom: 40px;
+            }
+
+            .footer-logo {
+                grid-column: span 1;
+            }
+
+            .footer-logo img {
+                height: 60px;
+                margin-bottom: 20px;
+            }
+
+            .footer-logo p {
+                margin-bottom: 20px;
+                line-height: 1.8;
+            }
+
+            .footer-links h4,
+            .footer-contact h4 {
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+                color: var(--accent-color);
+            }
+
+            .footer-links ul {
+                list-style: none;
+            }
+
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+
+            .footer-links a {
+                color: #ccc;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .footer-links a:hover {
+                color: var(--accent-color);
+            }
+
+            .footer-contact p {
+                margin-bottom: 15px;
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .footer-contact i {
+                margin-right: 15px;
+                color: var(--accent-color);
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .social-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                color: white;
+                text-decoration: none;
+                transition: all 0.3s;
+            }
+
+            .social-link:hover {
+                background-color: var(--accent-color);
+                color: var(--primary-color);
+                transform: translateY(-5px);
+            }
+
+            .copyright {
+                text-align: center;
+                padding-top: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+                color: #999;
+            }
+
+            /* Responsive */
+            @media (max-width: 992px) {
+                .hero-content,
+                .features-content,
+                .contact-wrapper {
+                    flex-direction: column;
+                }
+
+                .services-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .footer-content {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .services-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .nav-links {
+                    display: none;
+                }
+
+                .footer-content {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="container header-content">
+                <div class="logo">
+                    <img src="/api/placeholder/100/50" alt="LogiServe Logo" />
+                    <h1>LogiServe</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <button class="cta-button">Solicitar Cotización</button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h2>
+                        Soluciones <span>Logísticas</span> Para Cada Necesidad
+                    </h2>
+                    <p>
+                        Somos expertos en suministro y logística para eventos,
+                        alimentación, tecnología, construcción, maquinaria y
+                        cualquier necesidad en diversos sectores económicos.
+                    </p>
+                    <button class="cta-button">Conoce Nuestros Servicios</button
+                    >
+                </div>
+                <div class="hero-image">
+                    <img
+                        src="/api/placeholder/600/400"
+                        alt="Servicios Logísticos"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="servicios">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Nuestros Servicios</h3>
+                    <p>
+                        Ofrecemos soluciones integrales adaptadas a las
+                        necesidades específicas de cada sector y cliente.
+                    </p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="/api/placeholder/400/200" alt="Eventos" />
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <span>📅</span>
+                            </div>
+                            <h4>Logística para Eventos</h4>
+                            <p>
+                                Coordinamos todos los aspectos logísticos para
+                                el éxito de sus eventos corporativos, ferias y
+                                congresos.
+                            </p>
+                            <a href="#" class="cta-button">Más Información</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img
+                                src="/api/placeholder/400/200"
+                                alt="Alimentación"
+                            />
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <span>🍽️</span>
+                            </div>
+                            <h4>Suministro Alimentario</h4>
+                            <p>
+                                Gestión completa de la cadena de suministro
+                                alimentario para empresas, eventos y servicios
+                                de catering.
+                            </p>
+                            <a href="#" class="cta-button">Más Información</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img
+                                src="/api/placeholder/400/200"
+                                alt="Tecnología"
+                            />
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <span>💻</span>
+                            </div>
+                            <h4>Equipamiento Tecnológico</h4>
+                            <p>
+                                Suministro y configuración de equipos
+                                tecnológicos para eventos, oficinas y proyectos
+                                especiales.
+                            </p>
+                            <a href="#" class="cta-button">Más Información</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img
+                                src="/api/placeholder/400/200"
+                                alt="Construcción"
+                            />
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <span>🏗️</span>
+                            </div>
+                            <h4>Materiales de Construcción</h4>
+                            <p>
+                                Logística y distribución de materiales para
+                                proyectos de construcción e infraestructura.
+                            </p>
+                            <a href="#" class="cta-button">Más Información</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img
+                                src="/api/placeholder/400/200"
+                                alt="Maquinaria"
+                            />
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <span>🚜</span>
+                            </div>
+                            <h4>Maquinaria Industrial</h4>
+                            <p>
+                                Alquiler y transporte de maquinaria pesada para
+                                proyectos industriales y de construcción.
+                            </p>
+                            <a href="#" class="cta-button">Más Información</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img
+                                src="/api/placeholder/400/200"
+                                alt="Transporte"
+                            />
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <span>🚚</span>
+                            </div>
+                            <h4>Transporte Especializado</h4>
+                            <p>
+                                Soluciones de transporte adaptadas a cada tipo
+                                de mercancía y necesidad logística.
+                            </p>
+                            <a href="#" class="cta-button">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="nosotros">
+            <div class="container">
+                <div class="features-content">
+                    <div class="features-image">
+                        <img
+                            src="/api/placeholder/500/400"
+                            alt="Nuestras Ventajas"
+                        />
+                    </div>
+                    <div class="features-text">
+                        <h3>¿Por qué elegir nuestros servicios?</h3>
+                        <div class="feature-item">
+                            <div class="feature-icon">1</div>
+                            <div class="feature-text">
+                                <h4>Experiencia Comprobada</h4>
+                                <p>
+                                    Más de 15 años proporcionando soluciones
+                                    logísticas en diversos sectores económicos.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">2</div>
+                            <div class="feature-text">
+                                <h4>Equipo Especializado</h4>
+                                <p>
+                                    Contamos con profesionales altamente
+                                    capacitados en cada área de especialización.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">3</div>
+                            <div class="feature-text">
+                                <h4>Soluciones a Medida</h4>
+                                <p>
+                                    Adaptamos nuestros servicios a las
+                                    necesidades específicas de cada cliente y
+                                    proyecto.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">4</div>
+                            <div class="feature-text">
+                                <h4>Tecnología de Punta</h4>
+                                <p>
+                                    Utilizamos sistemas avanzados para la
+                                    gestión logística y seguimiento en tiempo
+                                    real.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section class="clients" id="clientes">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Nuestros Clientes</h3>
+                    <p>
+                        Empresas líderes en diferentes sectores confían en
+                        nuestros servicios de logística y suministro.
+                    </p>
+                </div>
+                <div class="clients-logos">
+                    <div class="client-logo">
+                        <img src="/api/placeholder/140/70" alt="Cliente 1" />
+                    </div>
+                    <div class="client-logo">
+                        <img src="/api/placeholder/140/70" alt="Cliente 2" />
+                    </div>
+                    <div class="client-logo">
+                        <img src="/api/placeholder/140/70" alt="Cliente 3" />
+                    </div>
+                    <div class="client-logo">
+                        <img src="/api/placeholder/140/70" alt="Cliente 4" />
+                    </div>
+                    <div class="client-logo">
+                        <img src="/api/placeholder/140/70" alt="Cliente 5" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <h3>¿Necesitas soluciones logísticas para tu proyecto?</h3>
+                <p>
+                    Contáctanos hoy mismo para recibir una propuesta
+                    personalizada que se adapte a tus necesidades específicas.
+                </p>
+                <button class="cta-button">Solicitar Información</button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contacto">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Contáctanos</h3>
+                    <p>Estamos listos para ayudarte con tu próximo proyecto.</p>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>¿Cómo podemos ayudarte?</h3>
+                        <p>
+                            Completa el formulario y uno de nuestros
+                            especialistas se pondrá en contacto contigo a la
+                            brevedad.
+                        </p>
+                        <div class="contact-detail">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+123 456 7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@logiserve.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Dirección</h4>
+                                <p>Av. Principal 123, Ciudad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    class="form-control"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-control"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    class="form-control"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Empresa</label>
+                                <input
+                                    type="text"
+                                    id="company"
+                                    class="form-control"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea
+                                    id="message"
+                                    class="form-control"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn"
+                                >Enviar Mensaje</button
+                            >
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img
+                            src="/api/placeholder/150/60"
+                            alt="LogiServe Logo"
+                        />
+                        <p>
+                            Soluciones logísticas integrales para empresas y
+                            organizaciones en diversos sectores económicos.
+                        </p>
+                        <div class="social-icons">
+                            <a href="#" class="social-link">f</a>
+                            <a href="#" class="social-link">t</a>
+                            <a href="#" class="social-link">in</a>
+                            <a href="#" class="social-link">ig</a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Enlaces Rápidos</h4>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#nosotros">Nosotros</a></li>
+                            <li><a href="#clientes">Clientes</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Nuestros Servicios</h4>
+                        <ul>
+                            <li><a href="#">Logística para Eventos</a></li>
+                            <li><a href="#">Suministro Alimentario</a></li>
+                            <li><a href="#">Equipamiento Tecnológico</a></li>
+                            <li><a href="#">Materiales de Construcción</a></li>
+                            <li><a href="#">Maquinaria Industrial</a></li>
+                            <li><a href="#">Transporte Especializado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Información de Contacto</h4>
+                        <p><i>📞</i> +123 456 7890</p>
+                        <p><i>✉️</i> info@logiserve.com</p>
+                        <p><i>📍</i> Av. Principal 123, Ciudad</p>
+                        <p><i>⏰</i> Lun - Vie: 8:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 LogiServe. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

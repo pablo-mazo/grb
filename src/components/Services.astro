@@ -1,0 +1,196 @@
+---
+import ServiceChain from "../assets/service-chain.jpg";
+import ServiceEvent from "../assets/service-event.jpg";
+import ServiceTransport from "../assets/service-transport.jpg";
+import ServiceStorage from "../assets/service-storage.jpg";
+import ServiceRent from "../assets/service-rent.png";
+import ServiceConsulting from "../assets/service-consult.jpg";
+---
+
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Nuestros servicios</h2>
+            <p>
+                Soluciones logísticas y suministros para cada necesidad de tu
+                negocio
+            </p>
+        </div>
+        <div class="service-grid">
+            <div class="service-card">
+                <div
+                    class="service-image"
+                    style={`background-image: url(${ServiceChain.src})`}
+                >
+                </div>
+                <div class="service-content">
+                    <h3>Gestión de cadena de suministros</h3>
+                    <p>
+                        Soluciones de logística de extremo a extremo que
+                        optimizan tu cadena de suministros desde la adquisición
+                        hasta la entrega final, reduciendo costos y mejorando
+                        eficiencia.
+                    </p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div
+                    class="service-image"
+                    style={`background-image: url(${ServiceEvent.src})`}
+                >
+                </div>
+                <div class="service-content">
+                    <h3>Logística de eventos</h3>
+                    <p>
+                        Soporte logístico completo incluyendo equipos,
+                        alimentos, bebidas y servicios técnicos para eventos de
+                        cualquier tamaño y complejidad.
+                    </p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div
+                    class="service-image"
+                    style={`background-image: url(${ServiceTransport.src})`}
+                >
+                </div>
+                <div class="service-content">
+                    <h3>Transporte y distribución</h3>
+                    <p>
+                        Servicios de transporte confiables con una vasta red de
+                        transportistas para asegurar que tus productos lleguen a
+                        tiempo y en condición perfecta.
+                    </p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div
+                    class="service-image"
+                    style={`background-image: url(${ServiceStorage.src})`}
+                >
+                </div>
+                <div class="service-content">
+                    <h3>Almacenamiento</h3>
+                    <p>
+                        Facilidades de almacenamiento de la última generación
+                        con sistemas de gestión de inventario avanzados para
+                        mantener tu cadena de suministro en marcha.
+                    </p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div
+                    class="service-image"
+                    style={`background-image: url(${ServiceRent.src})`}
+                >
+                </div>
+                <div class="service-content">
+                    <h3>Alquiler de equipos</h3>
+                    <p>
+                        Alquiler de maquinaria y equipos de alta calidad para
+                        construcción, eventos y aplicaciones industriales con
+                        términos flexibles.
+                    </p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div
+                    class="service-image"
+                    style={`background-image: url(${ServiceConsulting.src})`}
+                >
+                </div>
+                <div class="service-content">
+                    <h3>Consultoría</h3>
+                    <p>
+                        Asesoramiento experto para optimizar tus operaciones de
+                        logística, reducir costos y mejorar eficiencia con
+                        estrategias personalizadas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Services Section */
+    .services {
+        padding: 5rem 0;
+    }
+
+    .section-heading {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-heading h2 {
+        color: var(--primary);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+    }
+
+    .section-heading h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary);
+    }
+
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .service-card {
+        background-color: var(--light);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .service-content {
+        padding: 1.5rem;
+    }
+
+    .service-content h3 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .service-icon {
+        display: flex;
+        width: 60px;
+        height: 60px;
+        background-color: var(--secondary);
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .service-icon i {
+        font-size: 1.5rem;
+        color: var(--white);
+    }
+</style>

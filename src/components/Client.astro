@@ -1,0 +1,63 @@
+<!-- Clients Section -->
+<section class="clients">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Nuestros Clientes</h2>
+            <p>Clientes confiables de las principales compañías de la industria</p>
+        </div>
+        <div class="client-logos">
+            <img
+                src="/api/placeholder/150/80"
+                alt="Client Logo"
+                class="client-logo"
+            />
+            <img
+                src="/api/placeholder/150/80"
+                alt="Client Logo"
+                class="client-logo"
+            />
+            <img
+                src="/api/placeholder/150/80"
+                alt="Client Logo"
+                class="client-logo"
+            />
+            <img
+                src="/api/placeholder/150/80"
+                alt="Client Logo"
+                class="client-logo"
+            />
+            <img
+                src="/api/placeholder/150/80"
+                alt="Client Logo"
+                class="client-logo"
+            />
+        </div>
+    </div>
+</section>
+<style>
+    /* Clients Section */
+    .clients {
+        padding: 5rem 0;
+        background-color: var(--light);
+    }
+
+    .client-logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-top: 3rem;
+    }
+
+    .client-logo {
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        max-width: 150px;
+    }
+
+    .client-logo:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+</style>
